@@ -1,0 +1,45 @@
+﻿File -> new pro -> java web -> web app
+Glassfish
+Java EE7 web
+Finish
+
+
+
+
+Right click on project name -> New -> web service -> name your service -> Give package name -> com.mitesh -> click on create service from scratch -> finish
+
+
+In myCalculator service remove the code below the comment
+Right click on myCalaservice -> add operation -> name : addition -> return type : double -> add parameters : num1 and num2 : double -> ok
+
+
+Right click on project -> Build
+Right click on project -> Deploy
+Right click on myCalaservice -> test web service
+ —————
+
+
+
+
+New project -> java web -> web app -> calculatorwebclient
+Glassfish
+Java EE7 web
+Finish
+For palette : window -> IDE tools -> palette
+Drag and drop form in body -> Give name Action : CalculatorServlet, Method : get
+Enter number1 number 2, text input
+<input type=“submit” value=“Submit”>
+Right click in calculatorwebclient -> new -> web service client -> browse -> select myCalcWebService -> ok -> package default -> finish
+Copy CalculatorServlet
+Right click on calculatorwebclient -> new ->  Servlet -> class name : CalculatorServlet -> tick checkbox -> finish
+In CalculatorServlet.java -> drag and drop all the operations from WS references (before last “}”)
+Below try wali line
+double num1, num2;
+num1 = Double.parseDouble(request.getParameter(“number1”));
+num2 = Double.parseDouble(request.getParameter(“number2”)); //like done in form
+Below body, change out.print 
+“Addition is : “ + addition(num1 , num2) + 
+Right click on client wala project , and click on clean and build
+Open index.html (client wala)
+Right click on code and -> run file
+Done
